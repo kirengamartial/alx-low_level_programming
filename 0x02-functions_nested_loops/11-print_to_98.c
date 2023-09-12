@@ -1,75 +1,54 @@
 #include "main.h"
+
 /**
- * print_to_98 - Prints all natural numbers from n to 98.
- * @n: The starting number.
+ * print_times_table - Prints the n times table, starting with 0.
+ * @n: The times table to print.
  */
-void print_to_98(int n)
+void print_times_table(int n)
 {
-    if (n <= 98)
+    if (n >= 0 && n <= 15)
     {
-        while (n <= 98)
+        int i, j, result;
+
+        for (i = 0; i <= n; i++)
         {
-            /* Print the number */
-            if (n < 10 && n >= 0)
-                _putchar(n + '0');
-            else if (n < 0)
+            for (j = 0; j <= n; j++)
             {
-                _putchar('-');
-                if (n > -10)
-                    _putchar(-n + '0');
+                result = i * j;
+
+                if (j == 0)
+                {
+                    _putchar('0' + result);
+                }
                 else
                 {
-                    _putchar(-n / 10 + '0');
-                    _putchar(-n % 10 + '0');
+                    _putchar(',');
+                    _putchar(' ');
+
+                    if (result < 10)
+                    {
+                        _putchar(' '); // Add an extra space for single-digit numbers
+                        _putchar(' '); // Add an extra space for single-digit numbers
+                    }
+                    else if (result < 100)
+                    {
+                        _putchar(' '); // Add an extra space for double-digit numbers
+                    }
+
+                    if (result >= 100)
+                    {
+                        _putchar((result / 100) + '0');
+                        _putchar(((result / 10) % 10) + '0');
+                    }
+                    else
+                    {
+                        _putchar((result / 10) + '0');
+                    }
+
+                    _putchar((result % 10) + '0');
                 }
             }
-            else
-            {
-                _putchar(n / 10 + '0');
-                _putchar(n % 10 + '0');
-            }
-
-            /* Print comma and space if not the last number */
-            if (n != 98)
-                _putchar(',');
-
-            /* Increment n */
-            n++;
+            _putchar('\n');
         }
     }
-    else
-    {
-        while (n >= 98)
-        {
-            /* Print the number */
-            if (n < 10 && n >= 0)
-                _putchar(n + '0');
-            else if (n < 0)
-            {
-                _putchar('-');
-                if (n > -10)
-                    _putchar(-n + '0');
-                else
-                {
-                    _putchar(-n / 10 + '0');
-                    _putchar(-n % 10 + '0');
-                }
-            }
-            else
-            {
-                _putchar(n / 10 + '0');
-                _putchar(n % 10 + '0');
-            }
-
-            /* Print comma and space if not the last number */
-            if (n != 98)
-                _putchar(',');
-
-            /* Decrement n */
-            n--;
-        }
-    }
-
-    /* Print newline character at the end */
-    _putchar('\n');
 }
