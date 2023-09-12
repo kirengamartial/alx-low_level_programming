@@ -6,35 +6,33 @@
  */
 void print_to_98(int n)
 {
-	int i;
-
-	if (n <= 98)
-	{
-		for (i = n; i <= 98; i++)
-		{
-			if (i < 98)
-				_putchar((i / 10) + '0'); /* Print the tens digit */
-			_putchar((i % 10) + '0'); /* Print the ones digit */
-			if (i < 98)
-			{
-				_putchar(','); /* Print a comma */
-				_putchar(' '); /* Print a space */
-			}
-		}
-	}
-	else
-	{
-		for (i = n; i >= 98; i--)
-		{
-			if (i < 98)
-				_putchar((i / 10) + '0'); /* Print the tens digit */
-			_putchar((i % 10) + '0'); /* Print the ones digit */
-			if (i > 98)
-			{
-				_putchar(','); /* Print a comma */
-				_putchar(' '); /* Print a space */
-			}
-		}
-	}
-	_putchar('\n');
+    if (n <= 98)
+    {
+        while (n <= 98)
+        {
+            _putchar((n / 10) + '0'); /* Print the tens digit */
+            _putchar((n % 10) + '0'); /* Print the ones digit */
+            if (n != 98)
+            {
+                _putchar(','); /* Print a comma */
+                _putchar(' '); /* Print a space */
+            }
+            n++;
+        }
+    }
+    else
+    {
+        while (n >= 98)
+        {
+            _putchar((n / 10) + '0'); /* Print the tens digit */
+            _putchar((n % 10) + '0'); /* Print the ones digit */
+            if (n != 98)
+            {
+                _putchar(','); /* Print a comma */
+                _putchar(' '); /* Print a space */
+            }
+            n--;
+        }
+    }
+    _putchar('\n');
 }
