@@ -22,24 +22,34 @@ void print_times_table(int n)
                 }
                 else
                 {
-                    _putchar(' ');
-                    if (result < 10)
-                        _putchar(' ');
-                    else
-                        _putchar((result / 10) + '0');
-                    _putchar((result % 10) + '0');
-                }
-
-                if (j < n)
-                {
                     _putchar(',');
                     _putchar(' ');
-                }
-                else
-                {
-                    _putchar('\n');
+
+                    if (result < 10)
+                    {
+                        _putchar(' ');
+                        _putchar(' ');
+                    }
+                    else if (result < 100)
+                    {
+                        _putchar(' ');
+                    }
+
+                    if (result >= 100)
+                    {
+                        _putchar((result / 100) + '0');
+                        _putchar(((result / 10) % 10) + '0');
+                    }
+                    else
+                    {
+                        _putchar(' ');
+                        _putchar((result / 10) + '0');
+                    }
+
+                    _putchar((result % 10) + '0');
                 }
             }
+            _putchar('\n');
         }
     }
 }
