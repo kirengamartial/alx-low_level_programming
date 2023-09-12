@@ -1,26 +1,40 @@
 #include "main.h"
 
 /**
- * print_to_98 - prints all natural numbers from n to 98
- * @n: the starting number
- *
- * Return: void
+ * print_to_98 - Prints all natural numbers from n to 98
+ * @n: The starting number
  */
 void print_to_98(int n)
 {
-    int step = (n <= 98) ? 1 : -1;
+	int i;
 
-    while (n != 98)
-    {
-        _putchar((n / 10) + '0');
-        _putchar((n % 10) + '0');
-        _putchar(',');
-        _putchar(' ');
-
-        n += step;
-    }
-
-    _putchar('9');
-    _putchar('8');
-    _putchar('\n');
+	if (n <= 98)
+	{
+		for (i = n; i <= 98; i++)
+		{
+			if (i < 98)
+				_putchar((i / 10) + '0'); /* Print the tens digit */
+			_putchar((i % 10) + '0'); /* Print the ones digit */
+			if (i < 98)
+			{
+				_putchar(','); /* Print a comma */
+				_putchar(' '); /* Print a space */
+			}
+		}
+	}
+	else
+	{
+		for (i = n; i >= 98; i--)
+		{
+			if (i < 98)
+				_putchar((i / 10) + '0'); /* Print the tens digit */
+			_putchar((i % 10) + '0'); /* Print the ones digit */
+			if (i > 98)
+			{
+				_putchar(','); /* Print a comma */
+				_putchar(' '); /* Print a space */
+			}
+		}
+	}
+	_putchar('\n');
 }
