@@ -1,5 +1,12 @@
 #include <stdio.h>
-
+/**
+ * main - Entry point of the program
+ *
+ * Description: This function prints the character '_' using the putchar
+ *              function and returns 0 to indicate successful execution.
+ *
+ * Return: Always 0 (Success)
+ */
 int main(void)
 {
 	putchar('_');
