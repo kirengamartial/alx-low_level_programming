@@ -15,14 +15,18 @@ void print_number(int n)
 	}
 
 	for (i = n; i > 9 || i < -9; i /= 10)
+	{
 		divisor *= 10;
+	}
 
 	for (; divisor >= 1 || divisor <= -1; divisor /= 10)
 	{
 		int digit = n / divisor;
 
 		if (digit < 0)
+		{
 			digit *= -1;
+		}
 
 		_putchar(digit + '0');
 		n -= digit * divisor;
