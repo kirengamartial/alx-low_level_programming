@@ -8,7 +8,6 @@
  *
  * Return: The largest of the three integers.
  */
-
 int largest_number(int a, int b, int c)
 {
     int largest;
