@@ -16,5 +16,5 @@ void positive_or_negative(int i)
     else
         message = "0 is negative\n";
 
-    write(1, message, 14); // Using write to print the message
+    write(1, message, 14); /* Using write to print the message */
 }
