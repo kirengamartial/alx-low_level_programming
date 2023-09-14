@@ -1,57 +1,37 @@
+#include <stdio.h>
 #include "main.h"
-
 /**
- * fizz_buzz - prints Fizz-Buzz
- */
-void fizz_buzz(void)
+ * main - prints Fizz for multiples of 3, Buzz for those of 5,
+ * and FizzBuzz for those of 3 and 5, from 1 to 100
+ * Return: Always 0 upon completion
+ **/
+int main(void)
 {
-    int i;
+	int counter;
 
-    for (i = 1; i <= 100; i++)
-    {
-        if (i % 3 == 0)
-            print_str("Fizz");
-        if (i % 5 == 0)
-            print_str("Buzz");
-        if (i % 3 != 0 && i % 5 != 0)
-            print_int(i);
-
-        if (i < 100)
-            _putchar(' ');
-        else
-            _putchar('\n');
-    }
-}
-
-/**
- * print_str - prints a string
- * @str: the string to print
- */
-void print_str(char *str)
-{
-    while (*str)
-    {
-        _putchar(*str);
-        str++;
-    }
-}
-
-/**
- * print_int - prints an integer
- * @n: the integer to print
- */
-void print_int(int n)
-{
-    if (n / 10)
-        print_int(n / 10);
-    _putchar((n % 10) + '0');
-}
-
-/**
- * _putchar - writes the character c to stdout
- * @c: The character to print
- */
-int _putchar(char c)
-{
-    return write(1, &c, 1);
+	for (counter = 1; counter <= 100; counter++)
+	{
+		if (counter % 15 == 0)
+		{
+			printf("FizzBuzz");
+		}
+		else if (counter % 3 == 0)
+		{
+			printf("Fizz");
+		}
+		else if (counter % 5 == 0)
+		{
+			printf("Buzz");
+		}
+		else
+		{
+			printf("%d", counter);
+		}
+		if (counter < 100)
+		{
+			printf(" ");
+		}
+	}
+	printf("\n");
+	return (0);
 }
