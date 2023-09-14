@@ -1,24 +1,24 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
- * positive_or_negative - checks if a number is positive or negative
- * @i: The number to be checked
+ * positive_or_negative - prints whether a number is positive, negative, or zero
+ * @i: The integer to be checked
  *
- * Return: No return value (void)
+ * Return: No return value
  */
+
 void positive_or_negative(int i)
 {
     if (i > 0)
     {
-        puts("Positive");
+        custom_puts("Positive\n");
     }
-    else if (i < 0)
+    else if (i == 0)
     {
-        puts("Negative");
+        custom_puts("Zero\n");
     }
     else
     {
-        puts("Zero");
+        custom_puts("Negative\n");
     }
 }
