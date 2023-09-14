@@ -1,12 +1,10 @@
 #include <stdio.h>
 
 /**
- * main - Entry point of the program
- *
- * Description: This function causes an infinite loop.
- *
- * Return: Always 0 (Success)
- */
+* main - causes an infinite loop
+* Return: 0
+*/
+
 int main(void)
 {
     int i;
@@ -15,10 +13,6 @@ int main(void)
 
     i = 0;
 
-    /*
-     * The code below is commented out
-     * to avoid an infinite loop.
-     */
     /* while (i < 10)
     {
         putchar(i);
