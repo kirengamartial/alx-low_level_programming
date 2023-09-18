@@ -1,6 +1,8 @@
 #ifndef MAIN_H
 #define MAIN_H
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 char *_strcpy(char *dest, char *src);
 void reset_to_98(int *n);
@@ -14,5 +16,6 @@ void puts2(char *str);
 void puts_half(char *str);
 void print_array(int *a, int n);
 int _atoi(char *s);
+void generate_password(char *password, int length);
 
 #endif /* MAIN_H */
